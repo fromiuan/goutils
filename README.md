@@ -23,3 +23,4 @@ lib/snowflake            | Snow flake,for details,read `https://github.com/bwmar
 lib/task                 | Timed task.
 notice/dingtalk          | DingTalk Reboot.
 notice/mail              | Email.
+notice/sms               | Sms,suport aliyun,tencent,huawei.
