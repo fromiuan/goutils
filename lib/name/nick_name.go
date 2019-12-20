@@ -112,10 +112,12 @@ var (
 	defaultRand  = rand.New(rand.NewSource(time.Now().UnixNano()))
 )
 
+// load nicknamt to cache
 func LoadNickName() {
 	nickNameList = strings.Split(nickName, ",")
 }
 
+// get random nickname
 func GetNickName() string {
 	if len(nickNameList) == 0 {
 		nickNameList = strings.Split(nickName, ",")
