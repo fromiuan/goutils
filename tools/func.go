@@ -138,35 +138,6 @@ func ClientIP(ctx context.Context) string {
 	return ""
 }
 
-// ip17mon
-// --------------------------------------------------------------------------------
-func InitIp17mon() *ip17mon.Locator {
-	var locatord *ip17mon.Locator
-	var err error
-
-	monipdbFile := "/share/lib/ip/17monipdb.dat"
-	currPath, _ := os.Getwd()
-	globalFile := filepath.Dir(currPath)
-	for {
-		globalFile = currPath + monipdbFile
-		if !isExist(globalFile) {
-			currPath = filepath.Dir(currPath)
-			if currPath == "/" {
-				return nil
-			}
-			continue
-		}
-		break
-	}
-	locatord, err = ip17mon.NewLocator(globalFile)
-	if err != nil {
-		return nil
-	}
-	return locatord
-}
-
-// ------------------------------------------------------------------------
-
 func IsEmail(email string) bool {
 	if len(email) == 0 {
 		return false
@@ -247,8 +218,6 @@ func IsContainChinese(str string) bool {
 	}
 	return false
 }
-
-// ------------------------------------------------------------------------
 
 func getCurrPath() string {
 	dir, _ := filepath.Abs(filepath.Dir(os.Args[0]))
