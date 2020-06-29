@@ -21,7 +21,6 @@ import (
 	"unicode"
 
 	"github.com/micro/go-micro/metadata"
-	"github.com/wangtuanjie/ip17mon"
 )
 
 // environment models
